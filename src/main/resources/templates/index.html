@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p></p>
+</body>
+<div>
+    <a href="/">Apples</a>
+    <table>
+        <tr>
+            <th>Sort</th>
+            <th>Color</th>
+            <th>Weight</th>
+            <th>Sour</th>
+            <th colspan='3'>Action</th>
+        </tr>
+        <tr th:each="el : ${apples}">
+            <th th:text="${el.sort}"></th>
+            <th th:text="${el.color}"></th>
+            <th th:text="${el.weight}"></th>
+            <th th:text="${el.sour}"></th>
+            <th><a th:href="'/' + ${el.id} + '/show'">Show</a></th>
+            <th><a th:href="'/' + ${el.id} + '/edit'">Edit</a></th>
+            <th><form th:action="'/' + ${el.id} + '/delete'" method="post"><button type="submit">Delete</button></form></th>
+        </tr>
+    </table>
+    <a href="/new">New apple</a>
+</div>
+</html>

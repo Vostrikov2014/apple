@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p></p>
+</body>
+<div>
+    <div th:each="el : ${apple}">
+        <h3 th:text="'Sort: ' + ${el.sort}"></h3>
+        <p th:text="'Color: ' + ${el.color}"></p>
+        <p th:text="'Weight: '+ ${el.weight}"></p>
+        <p th:text="'Sour: '  + ${el.sour}"></p>
+        <a th:href="'/' + ${el.id} + '/edit'">Edit</a>
+        <form th:action="'/' + ${el.id} + '/delete'" method="post">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+</div>
+</html>

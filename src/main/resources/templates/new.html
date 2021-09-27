@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p></p>
+</body>
+<div>
+    <h3>New apple</h3>
+    <form action="/new" method="post">
+        <input type="Float" name="weight" placeholder="Enter weight apple"><br>
+        <div>
+            <select size="1" name="color">
+                <option th:each="colorType : ${colorTypes}"
+                        th:text="${colorType.name}"
+                        th:value="${colorType}"></option>
+            </select>
+        </div>
+        <input type="String" name="sort" placeholder="Enter sort apple"><br>
+        <input type="Boolean" name="sour" placeholder="Enter sour apple"><br>
+        <button type="submit">New apple</button>
+    </form>
+</div>
+</html>

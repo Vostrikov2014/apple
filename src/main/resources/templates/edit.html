@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p></p>
+</body>
+<div>
+    <h3>Edit apple</h3>
+    <div th:each="el : ${apple}">
+        <form method="POST">
+            <input type="Float" th:value="${el.weight}" name="weight"><br>
+            <!--<div style="color:red" th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}">Name errors</div>-->
+
+            <input type="ColorType" th:value="${el.color}" name="color"><br>
+            <input type="String" th:value="${el.sort}" name="sort"><br>
+            <input type="Boolean" th:value="${el.sour}" name="sour"><br>
+            <button type="submit">Ok</button>
+        </form>
+    </div>
+</div>
+</html>
